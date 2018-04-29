@@ -3,6 +3,51 @@
     <ul class="nav">
       <li class="nav-item">
         <a class="nav-link" routerLink="/"><i class="icon-speedometer"></i> Dashboard <span class="badge badge-primary">NEW</span></a>
+      </li>      
+      <li class="nav-item nav-dropdown">
+        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-book-open"></i>Exam</a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" routerLink=""><i class="icon-book-open"></i>EXAM TAKING</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink=""><i class="icon-book-open"></i>GROUP</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink=""><i class="icon-book-open"></i>TEST</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/takers"><i class="icon-book-open"></i>TAKER</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item nav-dropdown">
+        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-book-open"></i>BANK</a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/questions"><i class="icon-book-open"></i>QUESTION</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/parts"><i class="icon-book-open"></i>PART</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item nav-dropdown">
+        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-book-open"></i>CATEGORY</a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/semesters"><i class="icon-book-open"></i>SEMESTER</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/subjects"><i class="icon-book-open"></i>SUBJECT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/test_types"><i class="icon-book-open"></i>TEST TYPE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/labs"><i class="icon-book-open"></i>LAB</a>
+          </li>
+        </ul>
       </li>
       <li class="nav-item nav-dropdown">
         <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-people"></i> Users</a>
@@ -15,26 +60,22 @@
           </li>
         </ul>
       </li>
+      <!-- <li class="divider"></li> -->
       <li class="nav-item nav-dropdown">
-        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-book-open"></i> Exams</a>
+        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-star"></i> Pages</a>
         <ul class="nav-dropdown-items">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/subjects"><i class="icon-book-open"></i> Subjects</a>
+            <a class="nav-link" routerLink="/login" target="_top"><i class="icon-star"></i> Login</a>
+          </li>          
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/true-false"><i class="icon-book-open"></i>True/False</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="icon-book-open"></i> Test Types</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/labs"><i class="icon-book-open"></i> Labs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/semesters"><i class="icon-book-open"></i> Semesters</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/takers"><i class="icon-book-open"></i> Takers</a>
+            <a class="nav-link" routerLink="/multiple-choice"><i class="icon-book-open"></i>Multiple-choice</a>
           </li>
         </ul>
       </li>
+
     </ul>
   </nav>
   <button class="sidebar-minimizer brand-minimizer" type="button"></button>

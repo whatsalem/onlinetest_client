@@ -15,7 +15,10 @@ import { SemestersComponent } from './semesters/semesters.component';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { TakersComponent } from './takers/takers.component';
 import { ProfileSettingComponent } from './profile-setting/profile-setting.component';
-
+import { QuestionsComponent } from './questions/questions.component';
+import { PartsComponent } from './parts/parts.component';
+import { MultipleChoiceComponent } from './multiple-choice/multiple-choice.component';
+import { TrueFalseComponent } from './true-false/true-false.component';
 
 const appRoutes: Routes = [
     
@@ -29,7 +32,11 @@ const appRoutes: Routes = [
           { path: 'semesters', component: SemestersComponent },
           { path: 'subjects', component: SubjectsComponent },
           { path: 'takers', component: TakersComponent },
-          { path: 'profile-setting', component:ProfileSettingComponent }              
+          { path: 'profile-setting', component:ProfileSettingComponent },
+          { path: 'parts', component:PartsComponent },
+          { path: 'questions', component:QuestionsComponent },
+          { path: 'multiple-choice', component:MultipleChoiceComponent },
+          { path: 'true-false', component:TrueFalseComponent }          
         ]
       }
 ];

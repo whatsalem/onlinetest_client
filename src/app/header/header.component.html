@@ -2,7 +2,10 @@
   <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" routerLink="/"></a>
+  <span class="navbar">
+      <a class="navbar" routerLink="/" style="text-decoration: none;font-weight: bold;">Online Test</a>
+    </span>
+    <span class="navbar"></span>
   <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -13,9 +16,6 @@
     </li>
     <li class="nav-item d-md-down-none">
       <a class="nav-link" href="#"><i class="icon-list"></i></a>
-    </li>
-    <li class="nav-item d-md-down-none">
-      <a class="nav-link" href="#"><i class="icon-location-pin"></i></a>
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -38,7 +38,7 @@
         <a class="dropdown-item" href="#"><i class="fa fa-file"></i> Projects<span class="badge badge-primary">42</span></a>
         <div class="divider"></div>
         <a class="dropdown-item" href="#"><i class="fa fa-shield"></i> Lock Account</a>
-        <a class="dropdown-item" routerLink="/login" ><i class="fa fa-lock"></i> Logout</a>
+        <a class="dropdown-item" routerLink="" (click)="logout()"><i class="fa fa-lock"></i> Logout</a>
       </div>
     </li>
   </ul>

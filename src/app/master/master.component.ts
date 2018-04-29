@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService }   from '../service/api.service';
 declare var $:any;
 @Component({
   selector: 'app-master',
@@ -7,9 +8,10 @@ declare var $:any;
 })
 export class MasterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api:ApiService) { }
 ngOnInit() {
 	$.getScript('assets/js/app.js');
+	this.api.checktoken();
   }
 
 }

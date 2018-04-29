@@ -1,0 +1,87 @@
+<main class="main">
+  <ol class="breadcrumb">
+      <li class="breadcrumb-item">Home</li>
+      <li class="breadcrumb-item"><a href="#">Admin</a></li>
+      <li class="breadcrumb-item active">True/False</li>
+  </ol>
+  <div class="container">
+    <h1>True/False</h1> 
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group row">
+          <label for="sem-semester" class="col-sm-1 col-form-label js-example-basic-single">Question:</label>
+          <div class="col-sm-11">
+            <textarea id="editor" name="editor" cols="80" rows="10"></textarea> 
+          </div>
+        </div>
+        <div class="form-group row">
+            <label for="sem-semester" class="col-sm-1 col-form-label js-example-basic-single">Type:</label>
+                <div class="col-sm-11">
+                  <select class="form-control select-option-qb" id="type_answer" style="width: 100%s">
+                    <option name="yesno">Yes/No</option>
+                    <option name="trueflase">True/False</option>
+                    <option name="correctincorect">Correct/Incorrect</option>
+                  </select>
+                </div>
+        </div> 
+        <div class="form-group row">
+          <label for="sem-semester" class="col-sm-1 col-form-label js-example-basic-single">Ref:</label>
+          <div class="col-sm-11">
+            <input type="taker-id" class="form-control" id="sem-semester" placeholder="Reference">
+          </div>
+        </div>
+        <div class="form-group row" id="t">
+          <label for="correct_answer" class="col-2">Correct answer:</label>
+          <p></p>
+          <!--  -->
+          <div class="row col-3" id="tf" >
+              <div class="radio">
+                  <label><input type="radio" name="true" checked>True</label>
+              </div>
+              <div class="radio">
+                  <label><input type="radio" name="false">False</label>
+              </div>
+          </div>
+          <!--  -->
+          <div class="row col-3" id="cor" >
+              <div class="radio" >
+                  <label><input type="radio" name="correct" checked>Correct</label>
+              </div>
+              <div class="radio" >
+                  <label><input type="radio" name="incorrect">Incorrect</label>
+              </div>
+          </div>
+          <!--  -->
+          <div class="row" id="yn" >
+              <div class="radio" >
+                  <label><input type="radio" name="yes" checked>Yes</label>
+              </div>
+              <div class="radio" >
+                  <label><input type="radio" name="no">No</label>
+              </div>
+          </div>
+      </div>
+      <div class="form-group row">
+          <label class="col-2">Column of choice:</label>
+          <div class="col-1"><input type="number" name="column_of_choice" class="form-control" /></div>
+          <div class="col-3"></div>
+          <label>Score:</label>
+          <div class="col-1"><input type="number" name="score" class="form-control"/></div>
+      </div>
+        <div class="form-group row">
+            <div class="col-sm-9">                
+            </div>
+          <div class="col-sm-1">
+          <button type="button" class="btn btn-primary">Save</button>
+          </div>
+          <div class="col-sm-1">
+          <button type="button" class="btn btn-secondary">Cancel</button>
+          </div>
+          <div class="col-sm-1">
+          <button type="button" class="btn btn-secondary">Clear</button>
+          </div>
+        </div>             
+      </div>
+    </div>      
+  </div>
+</main>

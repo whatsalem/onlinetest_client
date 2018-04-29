@@ -10,7 +10,6 @@ export class LabsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  $.getScript('assets/js/admin.js');
   }
 
 }

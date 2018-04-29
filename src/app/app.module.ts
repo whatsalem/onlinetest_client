@@ -1,13 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { DataTablesModule } from 'angular-datatables';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http';
+import {CookieModule} from '@cedx/ngx-cookies';
+
+import { ApiService }   from './service/api.service';
+import { PnotifyService } from './service/pnotify.service';
+import { AuthService }   from './service/auth.service';
+import { SubjectsService }   from './service/subjects.service';
+import { LoginService }   from './service/login.service';
 
 import { AppComponent } from './app.component';
-
-import { SubjectsService }   from './service/subjects.service';
-import { ApiService }   from './service/api.service';
-
 import { MasterComponent } from './master/master.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -20,33 +24,47 @@ import { SemestersComponent } from './semesters/semesters.component';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { TakersComponent } from './takers/takers.component';
 import { ProfileSettingComponent } from './profile-setting/profile-setting.component';
+import { QuestionsComponent } from './questions/questions.component';
+import { PartsComponent } from './parts/parts.component';
+import { MultipleChoiceComponent } from './multiple-choice/multiple-choice.component';
+import { TrueFalseComponent } from './true-false/true-false.component';
 
 import { routing } from './app.routing';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MasterComponent,
-    HeaderComponent,
-    SidebarComponent,
-    FooterComponent,
-    LoginComponent,
-    UserTypesComponent,
-    UsersComponent,
-    LabsComponent,
-    SemestersComponent,
-    SubjectsComponent,
-    TakersComponent,
-    ProfileSettingComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    routing
-  ],
-  providers: [ApiService,SubjectsService],
-  bootstrap: [AppComponent]
+declarations: [
+AppComponent,
+MasterComponent,
+HeaderComponent,
+SidebarComponent,
+FooterComponent,
+LoginComponent,
+UserTypesComponent,
+UsersComponent,
+LabsComponent,
+SemestersComponent,
+SubjectsComponent,
+TakersComponent,
+ProfileSettingComponent,
+QuestionsComponent,
+PartsComponent,
+MultipleChoiceComponent,    
+TrueFalseComponent
+],
+imports: [
+BrowserModule,
+DataTablesModule,
+CookieModule,
+FormsModule,
+HttpClientModule,
+routing
+],
+providers: [ApiService,LoginService,SubjectsService,{
+provide: HTTP_INTERCEPTORS,
+useClass: AuthService,
+multi: true
+},PnotifyService],
+bootstrap: [AppComponent]
 })
 export class AppModule { }

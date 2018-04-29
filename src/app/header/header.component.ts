@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Cookies} from '@cedx/ngx-cookies';
+import { Router } from '@angular/router';
+import { LoginService }   from '../service/login.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private logins:LoginService, private cookies: Cookies, private router: Router) { }
 
   ngOnInit() {
   }
-
+logout(){
+this.cookies.clear();
+this.router.navigate(['/login']);	
+}
 }
