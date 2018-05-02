@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm }   from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
 
@@ -12,7 +12,7 @@ selector: 'app-subjects',
 templateUrl: './subjects.component.html',
 styleUrls: ['./subjects.component.css']
 })
-export class SubjectsComponent implements OnInit {
+export class SubjectsComponent {
 dtOptions: any= {
 retrieve: true,
 dom: 'Bfrtip',
@@ -38,13 +38,11 @@ parent_id:any;
 change_var :any;
 unique_var :any;
 
-constructor(private subjects:SubjectsService,private pnotifyService: PnotifyService) {this.pnotifyService.getPNotify().defaults.styling = 'bootstrap4';this.pnotifyService.getPNotify().defaults.icons= 'fontawesome4';}
-
-
-
-ngOnInit() {
+constructor(private subjects:SubjectsService,private pnotifyService: PnotifyService) {}
+ngOnInit(){
+this.pnotifyService.getPNotify().defaults.styling = 'bootstrap4';this.pnotifyService.getPNotify().defaults.icons= 'fontawesome4';
 $.getScript('assets/js/subjects.js');
-this.load();
+this.load();	
 }
 
 load(){
@@ -96,9 +94,7 @@ textTrusted: false,
 click: (notice) => {
 notice.close();
 notice.fire('pnotify.cancel', {notice});
-}
-}
-]
+}}]
 }
 }
 }).on('pnotify.confirm', () => {

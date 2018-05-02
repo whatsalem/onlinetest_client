@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { DataTablesModule } from 'angular-datatables';
 import { NgModule } from '@angular/core';
+import { DataTablesModule } from 'angular-datatables';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http';
 import {CookieModule} from '@cedx/ngx-cookies';
@@ -9,6 +9,7 @@ import { ApiService }   from './service/api.service';
 import { PnotifyService } from './service/pnotify.service';
 import { AuthService }   from './service/auth.service';
 import { SubjectsService }   from './service/subjects.service';
+import { QuestionsService }   from './service/questions.service';
 import { LoginService }   from './service/login.service';
 
 import { AppComponent } from './app.component';
@@ -60,11 +61,18 @@ FormsModule,
 HttpClientModule,
 routing
 ],
-providers: [ApiService,LoginService,SubjectsService,{
+providers: [
+ApiService,
+LoginService,
+SubjectsService,
+QuestionsService,
+{
 provide: HTTP_INTERCEPTORS,
 useClass: AuthService,
 multi: true
-},PnotifyService],
+},
+PnotifyService
+],
 bootstrap: [AppComponent]
 })
 export class AppModule { }

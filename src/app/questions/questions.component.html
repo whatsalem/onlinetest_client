@@ -53,112 +53,34 @@
             </div>
           </div>
           <div class="card-body">
-            <div class="row">
-              <div class="col-sm-12">
-                <table style="width: 100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Content</th>
-                            <th>Score</th> 
-                            <th>Type</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="odd gradeX">
-                            <td>Trident</td>
-                            <td>Internet Explorer 4.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">X</td>
-                            <td>
-                                <a href="subject_edit.html"><i class="fa fa-edit text-success"></i></a>
-                                <i class="fa fa-remove text-danger"></i>
-                                <i class="fas fa-info-circle" data-toggle="modal" data-target="#form_detail"></i>
-                            </td>
-                        </tr>
-                        <tr class="odd gradeX">
-                            <td>Trident</td>
-                            <td>Internet Explorer 4.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">X</td>
-                            <td>
-                                <a href="subject_edit.html"><i class="fa fa-edit text-success"></i></a>
-                                <i class="fa fa-remove text-danger"></i>
-                                <i class="fas fa-info-circle" data-toggle="modal" data-target="#form_detail"></i>
-                            </td>
-                        </tr>
-                        <tr class="odd gradeX">
-                            <td>Trident</td>
-                            <td>Internet Explorer 4.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">X</td>
-                            <td>
-                                <a href="subject_edit.html"><i class="fa fa-edit text-success"></i></a>
-                                <i class="fa fa-remove text-danger"></i>
-                                <i class="fas fa-info-circle" data-toggle="modal" data-target="#form_detail"></i>
-                            </td>
-                        </tr>
-                        <tr class="odd gradeX">
-                            <td>Trident</td>
-                            <td>Internet Explorer 4.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">X</td>
-                            <td>
-                                <a href="subject_edit.html"><i class="fa fa-edit text-success"></i></a>
-                                <i class="fa fa-remove text-danger"></i>
-                                <i class="fas fa-info-circle" data-toggle="modal" data-target="#form_detail"></i>
-                            </td>
-                        </tr>
-                        <tr class="odd gradeX">
-                            <td>Trident</td>
-                            <td>Internet Explorer 4.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">X</td>
-                            <td>
-                                <a href="subject_edit.html"><i class="fa fa-edit text-success"></i></a>
-                                <i class="fa fa-remove text-danger"></i>
-                                <i class="fas fa-info-circle" data-toggle="modal" data-target="#form_detail"></i>
-                            </td>
-                        </tr>
-                        <tr class="odd gradeX">
-                            <td>Trident</td>
-                            <td>Internet Explorer 4.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">X</td>
-                            <td>
-                                <a href="subject_edit.html"><i class="fa fa-edit text-success"></i></a>
-                                <i class="fa fa-remove text-danger"></i>
-                                <i class="fas fa-info-circle" data-toggle="modal" data-target="#form_detail"></i>
-                            </td>
-                        </tr>
-                        <tr class="odd gradeX">
-                            <td>Trident</td>
-                            <td>Internet Explorer 4.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">X</td>
-                            <td>
-                                <a href="subject_edit.html"><i class="fa fa-edit text-success"></i></a>
-                                <i class="fa fa-remove text-danger"></i>
-                                <i class="fas fa-info-circle" data-toggle="modal" data-target="#form_detail"></i>
-                            </td>
-                        </tr>
-                        <tr class="odd gradeX">
-                            <td>Trident</td>
-                            <td>Internet Explorer 4.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">X</td>
-                            <td>
-                                <a href="subject_edit.html"><i class="fa fa-edit text-success"></i></a>
-                                <i class="fa fa-remove text-danger"></i>
-                                <i class="fas fa-info-circle" data-toggle="modal" data-target="#form_detail"></i>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-              </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <table class="table table-striped table-bordered table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Mã Chủ Đề</th>
+                    <th>Ngày Tạo</th>
+                    <th>Ngày Cập Nhật</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="odd gradeX" *ngFor="let result of results">
+                    <td class="center">{{result.que_id}}</td>
+                    <td class="center">{{result.quecontent}}</td>
+                    <td class="center">{{result.createdAt| date:'dd-MM-yyyy HH:mm a ' }}</td>
+                    <td class="center">{{result.updatedAt | date:'dd-MM-yyyy HH:mm a ' }}</td>
+                    <td>
+                      <a data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-edit text-success"></i></a>
+                      <i class="fa fa-remove text-danger"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
+        </div>
       </div>
     </div> 
   </div>     

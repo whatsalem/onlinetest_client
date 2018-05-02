@@ -18,7 +18,8 @@ this.router.navigate(['/subjects']);
 }
 url ={
 login:this.baseUrl + 'login',
-subjects:this.baseUrl +'api/subjects'
+subjects:this.baseUrl +'api/subjects',
+questions:this.baseUrl +'api/questions'
 }
 
 }

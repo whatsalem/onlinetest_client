@@ -1,17 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { ApiService }   from '../service/api.service';
 declare var $:any;
 @Component({
-  selector: 'app-master',
-  templateUrl: './master.component.html',
-  styleUrls: ['./master.component.css']
+selector: 'app-master',
+templateUrl: './master.component.html',
+styleUrls: ['./master.component.css']
 })
-export class MasterComponent implements OnInit {
+export class MasterComponent {
 
-  constructor(private api:ApiService) { }
+constructor(private api:ApiService) { }
+
 ngOnInit() {
-	$.getScript('assets/js/app.js');
-	this.api.checktoken();
-  }
-
+this.api.checktoken();
+$.getScript('assets/js/app.js');
+}
 }

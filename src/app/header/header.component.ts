@@ -11,8 +11,9 @@ import { LoginService }   from '../service/login.service';
 export class HeaderComponent implements OnInit {
 
   constructor(private logins:LoginService, private cookies: Cookies, private router: Router) { }
-
+user:any;
   ngOnInit() {
+this.user = this.cookies.getObject('user', false).useaccount;
   }
 logout(){
 this.cookies.clear();
