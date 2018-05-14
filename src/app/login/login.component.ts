@@ -16,7 +16,6 @@ constructor(private logins:LoginService,private api:ApiService, private cookies:
 username:any;
 password:any;
 ngOnInit() {
-this.api.checktoken();
 }
 login(){
 this.logins.login(this.username,this.password).subscribe(data => {

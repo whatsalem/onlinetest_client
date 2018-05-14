@@ -28,6 +28,7 @@ data:any;
 dtTrigger: Subject<any> = new Subject();
 
 results: any;
+results_parent: any;
 detail: any;
 title:any;
 
@@ -52,6 +53,12 @@ this.dtTrigger.next();
 })
 }
 
+load_parent(parent_id){
+this.subjects.load_parent(parent_id).subscribe(data => {
+this.results_parent =(<any>data).data;
+})
+}
+
 save_add(){
 this.subjects.add(this.subjectcode,this.subjectname).subscribe(data => {
 this.load();
@@ -72,38 +79,20 @@ text:(<any>data).message
 }
 
 delete(id){
-this.pnotifyService.getPNotify().alert({
-title: 'Xác Nhận',
-text: 'Có Chắc Muốn Xóa Chủ Đề',
-modules: {
-Confirm: {
-confirm: true,
-buttons: [
-{
-text: 'Đồng Ý',
-textTrusted: false,
-primary: true,
-click: (notice, value) => {
-notice.close();
-notice.fire('pnotify.confirm', {notice, value});
-}
-},
-{
-text: 'Hủy',
-textTrusted: false,
-click: (notice) => {
-notice.close();
-notice.fire('pnotify.cancel', {notice});
-}}]
-}
-}
-}).on('pnotify.confirm', () => {
+$.confirm({
+title: 'Confirm!',
+content: 'Are you sure want to delete ?',
+buttons: {
+confirm: () => {
 this.subjects.delete(id).subscribe(data => {
 this.load();
 this.pnotifyService.getPNotify().success({
 text:(<any>data).message
 });
 });
+},
+cancel: () =>{}
+}
 });
 }
 
@@ -123,7 +112,7 @@ this.subjectcode=null;
 this.subjectname=null;
 this.parent_id=null;
 this.change_var=1;
-this.title = 'Thêm';
+this.title = 'Add';
 break;
 case 2:
 this.detail = this.results.find(obj => obj.sub_id === id);
@@ -131,7 +120,7 @@ this.subjectcode=this.detail.subcode;
 this.subjectname=this.detail.subname;
 this.parent_id=this.detail.parent_id;
 this.change_var=2;
-this.title = 'Sửa';
+this.title = 'Edit';
 break;
 }
 }

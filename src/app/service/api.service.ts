@@ -9,17 +9,19 @@ constructor(private cookies : Cookies, private router: Router) { }
 baseUrl='http://localhost:3000/';
 
 checktoken(){
-if(this.cookies.length==0 || this.cookies.getObject('user', false).expired_time < Date.now()){
+if(this.cookies.length==0){
 this.router.navigate(['/login']);
-}
-else{
-this.router.navigate(['/subjects']);		
 }
 }
 url ={
 login:this.baseUrl + 'login',
 subjects:this.baseUrl +'api/subjects',
-questions:this.baseUrl +'api/questions'
+subjects_parent:this.baseUrl +'api/subjects_parent',
+questions:this.baseUrl +'api/questions',
+labs:this.baseUrl +'api/labs',
+takers:this.baseUrl +'api/takers',
+semesters:this.baseUrl + 'api/semesters',
+users:this.baseUrl +'api/users'
 }
 
 }

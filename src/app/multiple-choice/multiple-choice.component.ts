@@ -10,6 +10,6 @@ export class MultipleChoiceComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    $.getScript('assets/js/true_false.js');
+    $.getScript('assets/js/questions.js');
   }
 }

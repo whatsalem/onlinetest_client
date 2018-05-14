@@ -15,129 +15,34 @@
                       <h2 class="header-text">Labs</h2>
                     </div>
                     <div class="col-sm-1" id="header-btn-add">
-                        <button type="button" class="btn btn-add btn-primary" data-toggle="modal" data-target="#exampleModalCenter">+Add</button>
+                        <button type="button" class="btn btn-add btn-primary" data-toggle="modal" data-target="#exampleModalCenter" (click)="state(1)">+Add</button>
                     </div>
                 </div>
               </div>
               <div class="card-body">
                 <div class="row">
-                    <div class="col-sm-12">
-                        <table style="width: 100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                    <div class="col-sm-12"> 
+                        <table class="table table-striped table-bordered table-hover data-table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
                             <thead>
                                 <tr>
                                     <th>#</th>
                                     <th>Name</th>
                                     <th>Address</th>
+                                    <th>Created Day</th>
+                                    <th>Updated Day</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="odd gradeX">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 4.0</td>
-                                    <td>Win 95+</td>
+                                <tr class="odd gradeX" *ngFor="let result of results">
+                                    <td class="center">{{result.lab_id}}</td>
+                                    <td class="center">{{result.labname}}</td>
+                                    <td class="center">{{result.labaddress}}</td>
+                                    <td class="center">{{result.createdAt| date:'dd-MM-yyyy HH:mm a ' }}</td>
+                                    <td class="center">{{result.updatedAt | date:'dd-MM-yyyy HH:mm a ' }}</td>
                                     <td>
-                                        <a href="lab_edit.html"><i class="fa fa-edit text-success"></i></a>
-                                        <i class="fa fa-remove text-danger"></i>
-                                    </td>
-                                </tr>
-                                <tr class="odd gradeX">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 4.0</td>
-                                    <td>Win 95+</td>
-                                    <td>
-                                        <a href="lab_edit.html"><i class="fa fa-edit text-success"></i></a>
-                                        <i class="fa fa-remove text-danger"></i>
-                                    </td>
-                                </tr>
-                                <tr class="odd gradeX">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 4.0</td>
-                                    <td>Win 95+</td>
-                                    <td>
-                                        <a href="lab_edit.html"><i class="fa fa-edit text-success"></i></a>
-                                        <i class="fa fa-remove text-danger"></i>
-                                    </td>
-                                </tr>
-                                <tr class="odd gradeX">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 4.0</td>
-                                    <td>Win 95+</td>
-                                    <td>
-                                        <a href="lab_edit.html"><i class="fa fa-edit text-success"></i></a>
-                                        <i class="fa fa-remove text-danger"></i>
-                                    </td>
-                                </tr>
-                                <tr class="odd gradeX">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 4.0</td>
-                                    <td>Win 95+</td>
-                                    <td>
-                                        <a href="lab_edit.html"><i class="fa fa-edit text-success"></i></a>
-                                        <i class="fa fa-remove text-danger"></i>
-                                    </td>
-                                </tr>
-                                <tr class="odd gradeX">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 4.0</td>
-                                    <td>Win 95+</td>
-                                    <td>
-                                        <a href="lab_edit.html"><i class="fa fa-edit text-success"></i></a>
-                                        <i class="fa fa-remove text-danger"></i>
-                                    </td>
-                                </tr>
-                                <tr class="odd gradeX">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 4.0</td>
-                                    <td>Win 95+</td>
-                                    <td>
-                                        <a href="lab_edit.html"><i class="fa fa-edit text-success"></i></a>
-                                        <i class="fa fa-remove text-danger"></i>
-                                    </td>
-                                </tr>
-                                <tr class="odd gradeX">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 4.0</td>
-                                    <td>Win 95+</td>
-                                    <td>
-                                        <a href="lab_edit.html"><i class="fa fa-edit text-success"></i></a>
-                                        <i class="fa fa-remove text-danger"></i>
-                                    </td>
-                                </tr>
-                                <tr class="odd gradeX">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 4.0</td>
-                                    <td>Win 95+</td>
-                                    <td>
-                                        <a href="lab_edit.html"><i class="fa fa-edit text-success"></i></a>
-                                        <i class="fa fa-remove text-danger"></i>
-                                    </td>
-                                </tr>
-                                <tr class="odd gradeX">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 4.0</td>
-                                    <td>Win 95+</td>
-                                    <td>
-                                        <a href="lab_edit.html"><i class="fa fa-edit text-success"></i></a>
-                                        <i class="fa fa-remove text-danger"></i>
-                                    </td>
-                                </tr>
-                                <tr class="odd gradeX">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 4.0</td>
-                                    <td>Win 95+</td>
-                                    <td>
-                                        <a href="lab_edit.html"><i class="fa fa-edit text-success"></i></a>
-                                        <i class="fa fa-remove text-danger"></i>
-                                    </td>
-                                </tr>
-                                <tr class="odd gradeX">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 4.0</td>
-                                    <td>Win 95+</td>
-                                    <td>
-                                        <a href="lab_edit.html"><i class="fa fa-edit text-success"></i></a>
-                                        <i class="fa fa-remove text-danger"></i>
+                                        <a data-toggle="modal" data-target="#exampleModalCenter" (click)="state(2,result.lab_id)"><i class="fa fa-edit text-success"></i></a>
+                                        <i class="fa fa-remove text-danger" (click)="delete(result.lab_id)"></i>
                                     </td>
                                 </tr>
                             </tbody>
@@ -154,27 +59,42 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
           <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Add Lab</h5>
+              <h5 class="modal-title" id="exampleModalLongTitle">{{title}} Lab</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
               </button>
           </div>
           <div class="modal-body">
+            <form #myForm="ngForm">
               <div class="form-group row">
-                  <label for="lab-name" class="col-sm-3 col-form-label">Lab Name</label>
+                  <label for="lab-name" class="col-sm-3 col-form-label">Lab Name: <span id="required">*</span></label>
                   <div class="col-sm-9">
-                      <input type="text" class="form-control" id="lab-name" placeholder="Name">
+                    <input type="text" class="form-control" id="lab-name" placeholder="Lab Name" name="labname" required autocomplete="off" #labnamerr="ngModel" [(ngModel)]="labname" (input)="unique()">
+                    <div *ngIf="labnamerr.invalid && (labnamerr.dirty || labnamerr.touched)" class="alert alert-danger">
+                        <div *ngIf="labnamerr.errors.required">
+                            Code is required
+                        </div> 
+                    </div>  
+                    <div *ngIf="unique_var && (labnamerr.dirty || labnamerr.touched)" class="alert alert-danger">
+                        Code already exists
+                    </div>  
                   </div>
               </div>
               <div class="form-group row">
-                  <label for="lab-address" class="col-sm-3 col-form-label">Lab Address:</label>
+                  <label for="lab-address" class="col-sm-3 col-form-label">Lab Address: <span id="required">*</span></label>
                   <div class="col-sm-9">
-                      <input type="text" class="form-control" id="lab-address" placeholder="Address">
+                    <input type="text" class="form-control" placeholder="Lab Address" name="labaddress" required autocomplete="off" #labaddressrr="ngModel" [(ngModel)]="labaddress" (input)="unique()">
+                    <div *ngIf="labaddressrr.invalid && (labaddressrr.dirty || labnamerr.touched)" class="alert alert-danger">
+                        <div *ngIf="labaddressrr.errors.required">
+                            Code is required
+                        </div> 
+                    </div>  
                   </div>
               </div>
+            </form>
           </div>
           <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-primary" [disabled]="myForm.invalid || unique_var" (click)="change_state()">Save</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
           </div>

@@ -4,6 +4,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http';
 import {CookieModule} from '@cedx/ngx-cookies';
+import { CKEditorModule } from 'ng2-ckeditor';
 
 import { ApiService }   from './service/api.service';
 import { PnotifyService } from './service/pnotify.service';
@@ -11,6 +12,10 @@ import { AuthService }   from './service/auth.service';
 import { SubjectsService }   from './service/subjects.service';
 import { QuestionsService }   from './service/questions.service';
 import { LoginService }   from './service/login.service';
+import { UsersService }   from './service/users.service';
+import { LabsService }   from './service/labs.service';
+import { TakersService }   from './service/takers.service';
+import { SemestersService } from './service/semesters.service';
 
 import { AppComponent } from './app.component';
 import { MasterComponent } from './master/master.component';
@@ -26,9 +31,7 @@ import { SubjectsComponent } from './subjects/subjects.component';
 import { TakersComponent } from './takers/takers.component';
 import { ProfileSettingComponent } from './profile-setting/profile-setting.component';
 import { QuestionsComponent } from './questions/questions.component';
-import { PartsComponent } from './parts/parts.component';
 import { MultipleChoiceComponent } from './multiple-choice/multiple-choice.component';
-import { TrueFalseComponent } from './true-false/true-false.component';
 
 import { routing } from './app.routing';
 
@@ -49,15 +52,14 @@ SubjectsComponent,
 TakersComponent,
 ProfileSettingComponent,
 QuestionsComponent,
-PartsComponent,
-MultipleChoiceComponent,    
-TrueFalseComponent
+MultipleChoiceComponent
 ],
 imports: [
 BrowserModule,
 DataTablesModule,
 CookieModule,
 FormsModule,
+CKEditorModule,
 HttpClientModule,
 routing
 ],
@@ -66,6 +68,10 @@ ApiService,
 LoginService,
 SubjectsService,
 QuestionsService,
+UsersService,
+TakersService,
+LabsService,
+SemestersService,
 {
 provide: HTTP_INTERCEPTORS,
 useClass: AuthService,

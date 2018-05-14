@@ -11,6 +11,10 @@ load(){
 return this.http.get(this.api.url.subjects)
 }
 
+load_parent(data){
+return this.http.post('http://localhost:3000/api/subjects_parent',{parent_id: data})
+}
+
 add(data1,data2){
 return this.http.post(this.api.url.subjects,{subcode: data1 ,subname:data2})
 }

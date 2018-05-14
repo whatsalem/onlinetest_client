@@ -1,3 +1,3 @@
 $(function() {  
-	$('#user-type').select2();
+$('#user-type').select2();
 });
